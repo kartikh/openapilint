@@ -6,7 +6,36 @@ Validates that all properties' keys are `snake_case` style.
 
 ```json
 {
-  "TODO"
+  "paths": {
+    "/pets": {
+      "get": {
+        "parameters": [
+          {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "awesome_parameter_key": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "another_awesome_parameter_key": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -14,12 +43,35 @@ Validates that all properties' keys are `snake_case` style.
 
 ```json
 {
-  "TODO"
-}
-```
-
-```json
-{
-  "TODO"
+  "paths": {
+    "/pets": {
+      "get": {
+        "parameters": [
+          {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "notAwesomeParameterKey": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "another-not-awesome_parameter_key": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 ```

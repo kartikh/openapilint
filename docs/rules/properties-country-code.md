@@ -11,7 +11,6 @@ Validates that properties with the word `country` are named `country_code`, or e
       "get": {
         "parameters": [
           {
-            "in": "body",
             "schema": {
               "type": "object",
               "properties": {
@@ -38,9 +37,8 @@ Validates that properties with the word `country` are named `country_code`, or e
       "put": {
         "parameters": [
           {
-            "in": "body",
             "schema": {
-               "allOf": [
+              "allOf": [
                 {
                   "type": "object",
                   "discriminator": "petType",
@@ -77,7 +75,6 @@ Validates that properties with the word `country` are named `country_code`, or e
       "get": {
         "parameters": [
           {
-            "in": "body",
             "schema": {
               "type": "object",
               "properties": {
@@ -104,9 +101,8 @@ Validates that properties with the word `country` are named `country_code`, or e
       "put": {
         "parameters": [
           {
-            "in": "body",
             "schema": {
-               "allOf": [
+              "allOf": [
                 {
                   "type": "object",
                   "discriminator": "petType",

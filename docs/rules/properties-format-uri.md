@@ -1,12 +1,47 @@
 # enforce uri named properties include uri format (properties-format-uri)
 
-Validates that any properties with `url` or `uri` in the name include `{"format": "uri"}`.
+Validates that any properties with name ending in `url` or `uri` include `{"format": "uri"}`.
 
 ## Examples of *correct* usage
 
 ```json
 {
-  "TODO"
+  "paths": {
+    "/pets": {
+      "get": {
+        "parameters": [
+          {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "service_uri": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "profile_url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "my_return_url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -14,12 +49,38 @@ Validates that any properties with `url` or `uri` in the name include `{"format"
 
 ```json
 {
-  "TODO"
-}
-```
-
-```json
-{
-  "TODO"
+  "paths": {
+    "/pets": {
+      "get": {
+        "parameters": [
+          {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "service_uri": {
+                  "type": "string"
+                },
+                "profile_url": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "my_return_url": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 ```
